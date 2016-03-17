@@ -1,0 +1,44 @@
+urxvt*depth: 32
+
+#include ".local/share/xresources/main"
+
+urxvt*font:	xft:Monaco:pixelsize=15:antialias=true:hinting=true:bold
+urxvt*boldFont:	xft:Monaco:pixelsize=15:antialias=true:hinting=true:bold
+urxvt*boldItalicFont:	
+urxvt*imFont:	
+urxvt*italicFont:	
+urxvt*letterSpace: -2
+
+Xft.dpi:        96
+URxvt*scrollBar:  false
+URxvt*jumpScroll: true
+URxvt*skipScroll: false
+URxvt*visualBell: false
+
+URxvt.perl-lib: /home/jason/.urxvt/perl
+URxvt.perl-ext-common: default,matcher,clipboard,font-size
+URxvt.url-launcher: /usr/bin/x-www-browser
+URxvt.matcher.button: 1
+
+URxvt*iso14755: False
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
+
+Xcursor.theme: Simple-and-Soft
+
+urxvt.keysym.C-equal:     perl:font-size:increase
+urxvt.keysym.C-minus:     perl:font-size:decrease
+!
+! rofi
+rofi.bw: 1
+rofi.color-window: #CFD8DC
+rofi.color-normal: #CFD8DC, #000000, #CFD8DC, #263238, #FFFFFF
+rofi.opacity: 90
+rofi.width: 60
+rofi.location: 0
+rofi.padding: 100
+rofi.font: Monaco Bold 10

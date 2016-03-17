@@ -1,0 +1,193 @@
+# vim: et:ts=4:sw=4
+set $mod Mod4
+set $right_monitor DVI-I-2
+set $left_monitor DVI-I-3
+
+set $font Ubuntu, FontAwesome 12
+font pango:$font
+
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id /home/jason/stuff/scripts/i3/lock.sh
+
+floating_modifier $mod
+
+#bindsym $mod+z exec --no-startup-id gnome-terminal
+bindsym $mod+z exec --no-startup-id urxvt
+bindsym $mod+x exec --no-startup-id gvim
+bindsym $mod+Return exec --no-startup-id  nautilus
+bindsym Mod4+l exec /mnt/data/stuff/scripts/i3/lock_shut.sh
+
+bindsym $mod+Shift+q kill
+
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5% && pkill --signal RTMIN+5 i3blocks
+bindsym XF86AudioMute        exec pulseaudio-ctl mute  && pkill --signal RTMIN+5 i3blocks
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5% && pkill --signal RTMIN+5 i3blocks
+bindsym XF86AudioPlay exec --no-startup-id  mpc toggle && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioPause exec --no-startup-id  mpc toggle && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioNext exec --no-startup-id  mpc next && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioPrev exec --no-startup-id  mpc prev && pkill --signal RTMIN+2 i3blocks
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i'
+bindsym $mod+w exec --no-startup-id rofi -show window
+bindsym $mod+s exec --no-startup-id x-www-browser
+bindsym $mod+p exec --no-startup-id toggle_compton
+
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+c split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen
+bindsym $mod+space floating toggle
+
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+m move workspace to output right
+
+
+bindsym $mod+r mode "  "
+mode "  " {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+
+# class                 border  backgr. text    indicator
+client.focused          $base01 $base01    $base07 $base0F
+client.focused_inactive $base02 $base02    $base03 $base0F
+client.unfocused        $base02 $base02    $base03 $base0F
+client.urgent           $base01 $base01    $base07 $base0F
+#client.urgent           $base02 $base08    $base00 $base0F
+
+
+bar {
+    font pango:$font
+    colors {
+        separator $base03
+        background $base01
+        statusline $base05
+        focused_workspace  $base01 $base01    $base07
+        active_workspace   $base01 $base02    $base03
+        inactive_workspace $base01 $base01    $base03
+        urgent_workspace   $base01 $base01    $base08 
+    }
+    position top
+    i3bar_command i3bar
+    status_command i3blocks
+    tray_output primary
+    tray_padding 0
+    output $right_monitor
+}
+
+bar {
+    font pango:$font
+    colors {
+        separator $base03
+        background $base01
+        statusline $base05
+        focused_workspace  $base01 $base01    $base07
+        active_workspace   $base01 $base02    $base03
+        inactive_workspace $base01 $base01    $base03
+        urgent_workspace   $base01 $base01    $base08 
+    }
+    position top
+    tray_output none
+    i3bar_command i3bar
+    status_command i3blocks -c ~/.i3blocks.min.conf
+    output $left_monitor
+}
+
+hide_edge_borders both
+workspace_auto_back_and_forth yes
+#for_window [class="^.*"] border pixel 1
+for_window [class="Nvidia-settings"] floating enable
+for_window [title="Terminator Preferences"] floating enable
+for_window [title="DEVEL"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Nautilus"] floating enable
+for_window [class="Eog"] floating enable
+for_window [class="Pulseaudio-equalizer.py"] floating enable
+for_window [class="Gnome-tweak-tool"] floating enable
+for_window [class="Gnome-mpv"] floating enable
+for_window [title="DEVWINDOW"] floating enable
+
+#gaps inner 0 
+#gaps outer 0 
+#smart_gaps off
+

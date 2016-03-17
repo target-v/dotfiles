@@ -1,0 +1,35 @@
+export ZSH=$HOME/.zsh
+
+# zsh options
+source $ZSH/options.zsh
+
+# environment variables
+source $ZSH/env.zsh
+
+# functions 
+source $ZSH/functions.zsh
+
+# aliases
+source $ZSH/aliases.zsh
+
+# prompt config
+source $ZSH/prompt.zsh
+
+# key bindings
+source $ZSH/keybindings.zsh
+
+for i in $ZSH/mods/*.zsh(.N); do
+	source "$i"
+done
+
+# custom config
+
+if [ -d $ZSH/custom ]; then
+	for i in $ZSH/custom/*.zsh(.N); do
+		source "$i"
+	done
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ -s "/home/jason/.gvm/scripts/gvm" ]] && source "/home/jason/.gvm/scripts/gvm"

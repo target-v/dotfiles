@@ -1,0 +1,31 @@
+ncmpcpp_directory = "~/.ncmpcpp"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "/mnt/data/media/music"
+
+volume_color = "magenta"
+
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "no"
+
+progressbar_look = "▀▀ "
+progressbar_boldness = "yes"
+progressbar_color = "blue"
+progressbar_elapsed_color = "blue"
+
+user_interface = "alternative"
+state_line_color = "green"
+main_window_color = "green"
+main_window_highlight_color = "green"
+
+visualizer_color = "green"
+song_columns_list_format = "(22)[blue]{a} (40)[cyan]{t|f} (30)[blue]{b} (4)[red]{l}"
+titles_visibility = no
+
+
+alternative_ui_separator_color = "blue"
+state_flags_color = "green"
+display_volume_level = no
+display_remaining_time = no
+
+cyclic_scrolling = yes
