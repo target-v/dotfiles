@@ -1,10 +1,8 @@
 #!/bin/zsh
 
 bindkey '\e[1;5D' backward-word # urxvt, konsole
-bindkey '^[Od' backward-word # urxvt
 
 bindkey '\e[1;5C' forward-word # urxvt, konsole
-bindkey '^[Oc' forward-word # urxvt
 
 tcsh-backward-word () {
   local WORDCHARS="${WORDCHARS:s#/#}"

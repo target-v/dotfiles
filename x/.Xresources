@@ -30,6 +30,12 @@ URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
 
 Xcursor.theme: Simple-and-Soft
 
+
+URxvt.keysym.Control-Up:   \033[1;5A
+URxvt.keysym.Control-Down:    \033[1;5B
+URxvt.keysym.Control-Left:    \033[1;5D
+URxvt.keysym.Control-Right:    \033[1;5C
+
 urxvt.keysym.C-equal:     perl:font-size:increase
 urxvt.keysym.C-minus:     perl:font-size:decrease
 !
@@ -42,3 +48,4 @@ rofi.width: 60
 rofi.location: 0
 rofi.padding: 100
 rofi.font: Monaco Bold 10
+

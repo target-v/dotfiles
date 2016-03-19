@@ -3,11 +3,11 @@ set $mod Mod4
 set $right_monitor DVI-I-2
 set $left_monitor DVI-I-3
 
-set $font Ubuntu, FontAwesome 12
+set $font Monaco, FontAwesome Bold 10
 font pango:$font
 
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id /home/jason/stuff/scripts/i3/lock.sh
+exec --no-startup-id /home/jason/.local/bin/lock.sh
 
 floating_modifier $mod
 
@@ -15,7 +15,7 @@ floating_modifier $mod
 bindsym $mod+z exec --no-startup-id urxvt
 bindsym $mod+x exec --no-startup-id gvim
 bindsym $mod+Return exec --no-startup-id  nautilus
-bindsym Mod4+l exec /mnt/data/stuff/scripts/i3/lock_shut.sh
+bindsym Mod4+l exec /home/jason/.local/bin/lock_shut.sh
 
 bindsym $mod+Shift+q kill
 
@@ -126,6 +126,7 @@ set $base0C #97e0ff
 set $base0D #97bbf7
 set $base0E #c0b7f9
 set $base0F #fcc09e
+set $statusFG #ffffff
 
 # class                 border  backgr. text    indicator
 client.focused          $base01 $base01    $base07 $base0F
@@ -140,7 +141,7 @@ bar {
     colors {
         separator $base03
         background $base01
-        statusline $base05
+        statusline $statusFG
         focused_workspace  $base01 $base01    $base07
         active_workspace   $base01 $base02    $base03
         inactive_workspace $base01 $base01    $base03
