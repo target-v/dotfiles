@@ -19,12 +19,6 @@ setopt auto_cd
 # (see the section 'Redirection').
 setopt multios
 
-# If the argument to a cd command (or an implied cd with the AUTO_CD option set)
-# is not a directory, and does not begin with a slash, try to expand the
-# expression as if it were preceded by a '~' (see the section 'Filename
-# Expansion').
-setopt cdablevars
-
 # Functions to make it easier to type URLs as command line arguments.
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
