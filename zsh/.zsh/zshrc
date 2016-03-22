@@ -31,3 +31,5 @@ if [ -d $ZSH/custom ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#export PATH=$PATH:/home/jason/wine/wine64/usr/local/bin

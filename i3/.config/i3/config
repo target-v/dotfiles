@@ -52,6 +52,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 bindsym $mod+space floating toggle
 
+bindsym $mod+a focus parent
+
 set $workspace1 "1"
 set $workspace2 "2"
 set $workspace3 "3"
