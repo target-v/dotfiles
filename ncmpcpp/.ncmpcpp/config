@@ -28,4 +28,4 @@ state_flags_color = "green"
 display_volume_level = no
 display_remaining_time = no
 
-cyclic_scrolling = yes
+cyclic_scrolling = no
