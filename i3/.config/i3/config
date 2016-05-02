@@ -1,7 +1,7 @@
 # vim: et:ts=4:sw=4
 set $mod Mod4
-set $right_monitor DVI-I-2
-set $left_monitor DVI-I-3
+set $left_monitor DVI-D-0
+set $right_monitor DVI-I-1
 
 set $font Monaco, FontAwesome Bold 10
 font pango:$font
@@ -189,6 +189,7 @@ for_window [class="Pulseaudio-equalizer.py"] floating enable
 for_window [class="Gnome-tweak-tool"] floating enable
 for_window [class="Gnome-mpv"] floating enable
 for_window [title="DEVWINDOW"] floating enable
+for_window [title="Sudoqu"] floating enable
 
 #gaps inner 0 
 #gaps outer 0 

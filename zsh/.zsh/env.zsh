@@ -14,3 +14,5 @@ if hash rbenv 2>/dev/null; then
 fi
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+stty -ixon

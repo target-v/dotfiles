@@ -1,0 +1,12 @@
+! vim: set ft=xdefaults:
+
+rofi.bw: 1
+rofi.color-window: #1f222d
+rofi.color-normal: #1f222d, #fff, #1f222d, #fff, #000
+rofi.lines: 8
+rofi.opacity:90
+rofi.width: 25
+rofi.location: 0
+rofi.padding: 30
+!rofi.font: Monaco Bold 10
+rofi.font: Ubuntu 12
