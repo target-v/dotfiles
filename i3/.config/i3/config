@@ -11,8 +11,8 @@ exec --no-startup-id /home/jason/.local/bin/lock.sh
 
 floating_modifier $mod
 
-#bindsym $mod+z exec --no-startup-id gnome-terminal
-bindsym $mod+z exec --no-startup-id urxvt
+bindsym $mod+z exec --no-startup-id gnome-terminal
+#bindsym $mod+z exec --no-startup-id urxvt
 bindsym $mod+x exec --no-startup-id gvim
 bindsym $mod+Return exec --no-startup-id  nautilus
 bindsym Mod4+l exec /home/jason/.local/bin/lock_shut.sh
