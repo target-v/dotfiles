@@ -2,12 +2,15 @@ urxvt*depth: 32
 
 #include ".local/share/xresources/main"
 
-urxvt*font:	xft:Monaco:pixelsize=15:antialias=true:hinting=true:bold
-urxvt*boldFont:	xft:Monaco:pixelsize=15:antialias=true:hinting=true:bold
+!urxvt*font:	xft:Monaco:pixelsize=15:antialias=true:hinting=true:bold
+!urxvt*boldFont:	xft:Monaco:pixelsize=15:antialias=true:hinting=true:bold
+urxvt*font:	xft:Inconsolata-dz:pixelsize=13:bold
+urxvt*boldFont:	xft:Inconsolata-dz:pixelsize=13:bold
+
 urxvt*boldItalicFont:	
 urxvt*imFont:	
 urxvt*italicFont:	
-urxvt*letterSpace: -2
+urxvt*letterSpace: 0
 
 Xft.dpi:        96
 URxvt*scrollBar:  false
