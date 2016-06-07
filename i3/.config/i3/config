@@ -15,7 +15,7 @@ bindsym $mod+z exec --no-startup-id gnome-terminal
 #bindsym $mod+z exec --no-startup-id urxvt
 bindsym $mod+x exec --no-startup-id gvim
 bindsym $mod+Return exec --no-startup-id  nautilus
-bindsym Mod4+l exec /home/jason/.local/bin/lock_shut.sh
+bindsym Ctrl+Mod4+l exec /home/jason/.local/bin/lock_shut.sh
 
 bindsym $mod+Shift+q kill
 
@@ -36,6 +36,12 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
@@ -190,6 +196,8 @@ for_window [class="Gnome-tweak-tool"] floating enable
 for_window [class="Gnome-mpv"] floating enable
 for_window [title="DEVWINDOW"] floating enable
 for_window [title="Sudoqu"] floating enable
+for_window [title="Electron"] floating enable
+#for_window [class="[.]*"] floating enable
 
 #gaps inner 0 
 #gaps outer 0 
