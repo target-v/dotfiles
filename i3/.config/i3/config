@@ -197,9 +197,12 @@ for_window [class="Gnome-mpv"] floating enable
 for_window [title="DEVWINDOW"] floating enable
 for_window [title="Sudoqu"] floating enable
 for_window [title="Electron"] floating enable
+for_window [title="mpv"] floating enable
 #for_window [class="[.]*"] floating enable
 
 #gaps inner 0 
 #gaps outer 0 
 #smart_gaps off
 
+
+focus_follows_mouse no

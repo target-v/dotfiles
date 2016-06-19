@@ -10,3 +10,4 @@ rofi.location: 0
 rofi.padding: 30
 !rofi.font: Monaco Bold 10
 rofi.font: Ubuntu 12
+rofi.num: -2
