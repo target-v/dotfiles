@@ -29,7 +29,8 @@ class MpdBlock:
             "symbols": {
                     "playing": "▶",
                     "paused": "▮▮ ",
-                    "stopped": "■ stopped",
+                    #"stopped": "■ stopped",
+                    "stopped": "stopped",
             },
             "text": {
                     "playing": "playing: ",

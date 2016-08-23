@@ -1,5 +1,5 @@
 #export GOPATH=$HOME/dev/go
-export PATH="$PATH:$HOME/stuff/scripts:/opt/wine-staging/bin:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/stuff/scripts:/opt/wine-staging/bin:$HOME/.rbenv/bin:$HOME/.local/bin"
 
 export DEBEMAIL="jason@jpleau.ca"
 export DEBFULLNAME="Jason Pleau"
