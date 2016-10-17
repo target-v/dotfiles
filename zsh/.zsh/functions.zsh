@@ -41,7 +41,7 @@ function take() {
 
 # next two functions taken from oh-my-zsh
 function git_prompt_info() {
-	testdir=`stat -f -L -c %T $(pwd)`
+	testdir=`stat -f -L -c %T "$(pwd)"`
 	if [[ "$testdir" == "ext2/ext3" ]]; then
 		ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
 		ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
