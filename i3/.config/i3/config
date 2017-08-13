@@ -8,20 +8,27 @@ font pango:$font
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /home/jason/.local/bin/lock.sh
+exec --no-startup-id /home/jason/.local/bin/polybar.sh
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-sound
 
 floating_modifier $mod
 
 bindsym $mod+z exec --no-startup-id gnome-terminal
-#bindsym $mod+z exec --no-startup-id urxvt
 bindsym $mod+x exec --no-startup-id gvim
 bindsym $mod+Return exec --no-startup-id  nautilus
 bindsym Ctrl+Mod4+l exec /home/jason/.local/bin/i3lock.sh
 
 bindsym $mod+Shift+q kill
 
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5% && pkill --signal RTMIN+5 i3blocks
-bindsym XF86AudioMute        exec pulseaudio-ctl mute  && pkill --signal RTMIN+5 i3blocks
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5% && pkill --signal RTMIN+5 i3blocks
+#bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5% && pkill --signal RTMIN+5 i3blocks
+#bindsym XF86AudioMute        exec pulseaudio-ctl mute  && pkill --signal RTMIN+5 i3blocks
+#bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5% && pkill --signal RTMIN+5 i3blocks
+
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5% && polybar-msg hook volume 1
+bindsym XF86AudioMute        exec pulseaudio-ctl mute  && polybar-msg hook volume 1
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5% && polybar-msg hook volume 1
+
 bindsym XF86AudioPlay exec --no-startup-id  mpc toggle && pkill --signal RTMIN+2 i3blocks
 bindsym XF86AudioPause exec --no-startup-id  mpc toggle && pkill --signal RTMIN+2 i3blocks
 bindsym XF86AudioNext exec --no-startup-id  mpc next && pkill --signal RTMIN+2 i3blocks
@@ -144,43 +151,43 @@ client.urgent           $base01 $base01    $base07 $base0F
 #client.urgent           $base02 $base08    $base00 $base0F
 
 
-bar {
-    font pango:$font
-    colors {
-        separator $base03
-        background $base01
-        statusline $statusFG
-        focused_workspace  $base01 $base01    $base07
-        active_workspace   $base01 $base02    $base03
-        inactive_workspace $base01 $base01    $base03
-        urgent_workspace   $base01 $base01    $base08 
-    }
-    position top
-    i3bar_command i3bar
-    status_command i3blocks
-    tray_output primary
-    tray_padding 0
-    output $right_monitor
-}
-
-bar {
-    font pango:$font
-    colors {
-        separator $base03
-        background $base01
-        statusline $base05
-        focused_workspace  $base01 $base01    $base07
-        active_workspace   $base01 $base02    $base03
-        inactive_workspace $base01 $base01    $base03
-        urgent_workspace   $base01 $base01    $base08 
-    }
-    position top
-    tray_output none
-    i3bar_command i3bar
-    status_command i3blocks -c ~/.i3blocks.min.conf
-    output $left_monitor
-}
-
+#bar {
+#    font pango:$font
+#    colors {
+#        separator $base03
+#        background $base01
+#        statusline $statusFG
+#        focused_workspace  $base01 $base01    $base07
+#        active_workspace   $base01 $base02    $base03
+#        inactive_workspace $base01 $base01    $base03
+#        urgent_workspace   $base01 $base01    $base08 
+#    }
+#    position top
+#    i3bar_command i3bar
+#    status_command i3blocks
+#    tray_output primary
+#    tray_padding 0
+#    output $right_monitor
+#}
+#
+#bar {
+#    font pango:$font
+#    colors {
+#        separator $base03
+#        background $base01
+#        statusline $base05
+#        focused_workspace  $base01 $base01    $base07
+#        active_workspace   $base01 $base02    $base03
+#        inactive_workspace $base01 $base01    $base03
+#        urgent_workspace   $base01 $base01    $base08 
+#    }
+#    position top
+#    tray_output none
+#    i3bar_command /home/jason/
+#    status_command i3blocks -c ~/.i3blocks.min.conf
+#    output $left_monitor
+#}
+#
 hide_edge_borders both
 workspace_auto_back_and_forth yes
 for_window [class="^.*"] border pixel 1
