@@ -13,3 +13,10 @@ incoming		= /pub/UploadQueue/
 login			= anonymous
 allow_dcut		= 1
 method			= ftp
+
+[ubuntu_ppa]
+fqdn = ppa.launchpad.net
+method = ftp
+incoming = ~jasonpleau/ubuntu/rofi/
+login = anonymous
+allow_unsigned_uploads = 0
