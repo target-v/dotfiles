@@ -1,0 +1,6 @@
+bundle/
+plugged/
+ycm_extra_conf.pyc
+UltiSnips/
+.init*
+/custom

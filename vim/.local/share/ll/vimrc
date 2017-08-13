@@ -1,0 +1,80 @@
+let $MY_VIMHOME=expand('<sfile>:p:h')
+
+" Vim IMPROVED
+set nocompatible
+
+let g:loaded_netrwPlugin = "v152"
+
+if !exists("*BuildYCM")
+	function! BuildYCM(info)
+	if a:info.status == 'installed' || a:info.force
+		!./install.sh --clang-completer --gocode-completer 
+	endif
+	endfunction
+endif
+
+call plug#begin()
+
+" Plugins
+Plug 'ap/vim-css-color'
+Plug 'benekastah/neomake'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'fatih/vim-go'
+Plug 'https://github.com/vim-scripts/php.vim.git'
+Plug 'ironhouzi/vim-stim'
+Plug 'jpleau/vim-snippets'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mattn/emmet-vim'
+Plug 'matze/vim-move'
+Plug 'mhinz/vim-grepper'
+Plug 'Raimondi/delimitMate'
+Plug 'SirVer/ultisnips'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/ListToggle'
+Plug 'vim-scripts/a.vim', { 'for': [ 'c', 'cpp' ] }
+Plug 'wellle/targets.vim'
+if has("nvim")
+	Plug 'Shougo/deoplete.nvim'
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
+	Plug 'zchee/deoplete-jedi'
+	Plug 'carlitux/deoplete-ternjs'
+	"Plug 'carlitux/deoplete-ternjs'
+else
+	Plug 'Shougo/neocomplete.vim'
+	Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+endif
+Plug 'ternjs/tern_for_vim'
+Plug 'Shougo/neco-vim'
+Plug 'jpleau/vim-numerique'
+Plug 'scrooloose/nerdcommenter'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'majutsushi/tagbar'
+Plug 'shawncplus/phpcomplete.vim'
+"Plug 'mhinz/vim-startify'
+Plug 'junegunn/gv.vim'
+Plug 'jpleau/vim-atom-dark'
+Plug 'qpkorr/vim-bufkill'
+"Plug 'jeaye/color_coded'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'junegunn/goyo.vim'
+Plug 'suan/vim-instant-markdown'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-rails'
+
+" custom files not in git
+let s:custom_dir = $MY_VIMHOME . "/custom/*.vim"
+for f in split(glob(s:custom_dir)) | execute 'source' f | endfor
+
+call plug#end()
+
+filetype plugin indent on 
+syntax on
+
+source $MY_VIMHOME/settings.vim
