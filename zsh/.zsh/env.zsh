@@ -1,5 +1,16 @@
 #export GOPATH=$HOME/dev/go
-export PATH="$PATH:$HOME/stuff/scripts:/opt/wine-staging/bin:$HOME/.rbenv/bin:$HOME/.local/bin"
+
+# random scripts
+export PATH=$PATH:$HOME/stuff/scripts
+
+# rbenv
+export PATH=$PATH:$HOME/.rbenv/bin
+
+# scripts
+export PATH=$PATH:$HOME/.local/bin
+
+# luarocks
+export PATH=$PATH:$HOME/.luarocks/bin
 
 export DEBEMAIL="jason@jpleau.ca"
 export DEBFULLNAME="Jason Pleau"
